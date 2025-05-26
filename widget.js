@@ -2,7 +2,7 @@
   const scriptTag = document.currentScript;
   const botId = scriptTag.getAttribute("data-bot-id") || "default";
 
-  const botUrl = `https://mouzalinabil.github.io/braynova-widget/${botId}.html`;
+  const botUrl = `https://mouzalinabil.github.io/braynova-widget/default.html`;
 
   const iconUrl = `https://mouzalinabil.github.io/braynova-widget/chat-icon.png`;
 
