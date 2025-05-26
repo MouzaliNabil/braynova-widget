@@ -2,8 +2,8 @@
   const scriptTag = document.currentScript;
   const botId = scriptTag.getAttribute("data-bot-id") || "default";
 
-  const botUrl = `https://mouzalinabil.github.io/braynova-widget/docs/chat/${botId}.html`;
-  const iconUrl = `https://mouzalinabil.github.io/braynova-widget/docs/chat-icon.png`;
+const botUrl = `https://mouzalinabil.github.io/braynova-widget/chat/${botId}.html`;
+const iconUrl = `https://mouzalinabil.github.io/braynova-widget/chat-icon.png`;
 
   const launcher = document.createElement("div");
   launcher.style.position = "fixed";
