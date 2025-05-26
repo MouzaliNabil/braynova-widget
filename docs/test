@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Démo Chatbot</title>
+</head>
+<body>
+  <h1>Bienvenue dans ma boutique !</h1>
+
+  <!-- Chatbot -->
+  <script src="widget.js" data-bot-id="default"></script>
+</body>
+</html>
