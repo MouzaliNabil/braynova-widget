@@ -5,6 +5,7 @@
 const botUrl = `https://mouzalinabil.github.io/braynova-widget/chat/${botId}.html`;
 const iconUrl = `https://mouzalinabil.github.io/braynova-widget/chat-icon.png`;
 
+
   const launcher = document.createElement("div");
   launcher.style.position = "fixed";
   launcher.style.bottom = "20px";
