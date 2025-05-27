@@ -3,21 +3,22 @@
 <head>
   <title>Chatbot Hera Luna</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 10px; background: #fefefe; }
+    body { font-family: Arial, sans-serif; padding: 10px; background: #fdfdfd; }
     #chat { max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
-    .user { font-weight: bold; color: #333; margin-top: 10px; }
-    .bot { color: #007; margin-bottom: 10px; }
+    .user { font-weight: bold; color: #222; margin-top: 10px; }
+    .bot { color: #0074d9; margin-bottom: 10px; }
   </style>
 </head>
 <body>
-  <h3>💎 Bienvenue chez Hera Luna</h3>
+  <h3>💎 Chatbot Hera Luna</h3>
   <div id="chat"></div>
   <input type="text" id="msg" placeholder="Pose ta question..." style="width: 75%;">
   <button onclick="send()">Envoyer</button>
 
   <script>
     const chat = document.getElementById('chat');
-    const webhook = "https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat"; // ⚠️ à remplacer par ton URL publique
+
+    const webhook = "https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat"; // ← remplace ça
 
     function send() {
       const msg = document.getElementById('msg').value;
@@ -32,14 +33,15 @@
       })
       .then(res => res.json())
       .then(data => {
-        const answer = (data.output || "Je n'ai pas compris.").trim();
-        chat.innerHTML += `<div class="bot">🤖 ${answer}</div>`;
+        const reply = data.output || "❌ Pas de réponse reçue.";
+        chat.innerHTML += `<div class="bot">🤖 ${reply}</div>`;
         chat.scrollTop = chat.scrollHeight;
       })
       .catch(() => {
-        chat.innerHTML += `<div class="bot">❌ Erreur de connexion au bot.</div>`;
+        chat.innerHTML += `<div class="bot">❌ Erreur de connexion.</div>`;
       });
     }
   </script>
 </body>
 </html>
+
