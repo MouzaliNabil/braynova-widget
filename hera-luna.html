@@ -2,17 +2,21 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Hera Luna - Chatbot</title>
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <title>Chatbot Hera Luna</title>
     <script type="module">
-      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.es.js'
 
       createChat({
-        webhookUrl: 'https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chatt',
-        title: '💎 Hera Luna',
-        subtitle: 'Pose-moi une question ✨',
-        mode: 'window' // ou 'fullscreen' si tu veux
-      });
+        webhookUrl: 'https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chat',
+        title: '💎 Chatbot Hera Luna',
+        subtitle: 'Discutons de pierres naturelles ✨',
+        description: 'Pose ta question ici.',
+        mode: 'window', // ou 'embedded'
+        theme: {
+          color: '#E91E63',
+          logoUrl: 'https://braynova.github.io/braynova-widget/docs/chat-icon.png'
+        }
+      })
     </script>
   </head>
   <body></body>
