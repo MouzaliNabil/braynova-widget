@@ -1,47 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Chatbot Hera Luna</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 10px; background: #fdfdfd; }
-    #chat { max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
-    .user { font-weight: bold; color: #222; margin-top: 10px; }
-    .bot { color: #0074d9; margin-bottom: 10px; }
-  </style>
-</head>
-<body>
-  <h3>💎 Chatbot Hera Luna</h3>
-  <div id="chat"></div>
-  <input type="text" id="msg" placeholder="Pose ta question..." style="width: 75%;">
-  <button onclick="send()">Envoyer</button>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hera Luna - Chatbot</title>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
-  <script>
-    const chat = document.getElementById('chat');
-
-    const webhook = "https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chat"; // ← remplace ça
-
-    function send() {
-      const msg = document.getElementById('msg').value;
-      if (!msg) return;
-      chat.innerHTML += `<div class="user">🧑 ${msg}</div>`;
-      document.getElementById('msg').value = "";
-
-      fetch(webhook, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chatInput: msg })
-      })
-      .then(res => res.json())
-      .then(data => {
-        const reply = data.output || "❌ Pas de réponse reçue.";
-        chat.innerHTML += `<div class="bot">🤖 ${reply}</div>`;
-        chat.scrollTop = chat.scrollHeight;
-      })
-      .catch(() => {
-        chat.innerHTML += `<div class="bot">❌ Erreur de connexion.</div>`;
+      createChat({
+        webhookUrl: 'https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chatt',
+        title: '💎 Hera Luna',
+        subtitle: 'Pose-moi une question ✨',
+        mode: 'window' // ou 'fullscreen' si tu veux
       });
-    }
-  </script>
-</body>
+    </script>
+  </head>
+  <body></body>
 </html>
-
