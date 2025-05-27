@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chatbot Hera Luna</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 10px; background: #fefefe; }
+    #chat { max-height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .user { font-weight: bold; color: #333; margin-top: 10px; }
+    .bot { color: #007; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h3>💎 Bienvenue chez Hera Luna</h3>
+  <div id="chat"></div>
+  <input type="text" id="msg" placeholder="Pose ta question..." style="width: 75%;">
+  <button onclick="send()">Envoyer</button>
+
+  <script>
+    const chat = document.getElementById('chat');
+    const webhook = "https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat"; // ⚠️ à remplacer par ton URL publique
+
+    function send() {
+      const msg = document.getElementById('msg').value;
+      if (!msg) return;
+      chat.innerHTML += `<div class="user">🧑 ${msg}</div>`;
+      document.getElementById('msg').value = "";
+
+      fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chatInput: msg })
+      })
+      .then(res => res.json())
+      .then(data => {
+        const answer = (data.output || "Je n'ai pas compris.").trim();
+        chat.innerHTML += `<div class="bot">🤖 ${answer}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+      })
+      .catch(() => {
+        chat.innerHTML += `<div class="bot">❌ Erreur de connexion au bot.</div>`;
+      });
+    }
+  </script>
+</body>
+</html>
