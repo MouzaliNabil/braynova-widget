@@ -1,45 +1,15 @@
-(function () {
-  const scriptTag = document.currentScript;
-  const botId = scriptTag.getAttribute("data-bot-id") || "default";
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.es.js'
 
-  const botUrl = `https://mouzalinabil.github.io/braynova-widget/hera-luna.html`;
-
-
-  const iconUrl = `https://mouzalinabil.github.io/braynova-widget/chat-icon.png`;
-
-  const launcher = document.createElement("div");
-  launcher.style.position = "fixed";
-  launcher.style.bottom = "20px";
-  launcher.style.right = "20px";
-  launcher.style.zIndex = "99999";
-
-  const icon = document.createElement("img");
-  icon.src = iconUrl;
-  icon.alt = "Chatbot";
-  icon.width = 60;
-  icon.height = 60;
-  icon.style.cursor = "pointer";
-
-  icon.onclick = () => {
-    let iframe = document.getElementById("braynova-frame");
-    if (!iframe) {
-      iframe = document.createElement("iframe");
-      iframe.id = "braynova-frame";
-      iframe.src = botUrl;
-      iframe.style.position = "fixed";
-      iframe.style.bottom = "90px";
-      iframe.style.right = "20px";
-      iframe.style.width = "360px";
-      iframe.style.height = "500px";
-      iframe.style.border = "none";
-      iframe.style.borderRadius = "12px";
-      iframe.style.zIndex = "99999";
-      document.body.appendChild(iframe);
-    } else {
-      iframe.style.display = iframe.style.display === "none" ? "block" : "none";
+  createChat({
+    webhookUrl: 'https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat',
+    title: '💎 Chatbot Hera Luna',
+    subtitle: 'Discutons de pierres naturelles ✨',
+    description: 'Pose ta question ici.',
+    mode: 'window',
+    theme: {
+      color: '#E91E63',
+      logoUrl: 'https://mouzalinabil.github.io/braynova-widget/chat-icon.png'
     }
-  };
-
-  launcher.appendChild(icon);
-  document.body.appendChild(launcher);
-})();
+  })
+</script>
