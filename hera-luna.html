@@ -2,22 +2,24 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <title>Chatbot Hera Luna</title>
+    <title>Test Chatbot Hera Luna</title>
     <script type="module">
-      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.es.js'
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.es.js';
 
       createChat({
-        webhookUrl: 'https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chat',
+        webhookUrl: 'https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat',
         title: '💎 Chatbot Hera Luna',
-        subtitle: 'Discutons de pierres naturelles ✨',
-        description: 'Pose ta question ici.',
-        mode: 'window', // ou 'embedded'
+        subtitle: 'Bienvenue dans notre boutique !',
+        description: 'Pose ta question ici, et je te réponds avec amour. 💖',
+        mode: 'window', // peut être "embedded" si tu veux l'intégrer dans un div
         theme: {
-          color: '#E91E63',
-          logoUrl: 'https://braynova.github.io/braynova-widget/docs/chat-icon.png'
+          color: '#E91E63', // rose Hera Luna
+          logoUrl: 'https://mouzalinabil.github.io/braynova-widget/chat-icon.png' // ton icône personnalisé
         }
-      })
+      });
     </script>
   </head>
-  <body></body>
+  <body>
+    <!-- Rien à mettre ici pour le mode "window" -->
+  </body>
 </html>
