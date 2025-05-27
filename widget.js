@@ -2,7 +2,7 @@
   import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat@latest/dist/chat.bundle.es.js'
 
   createChat({
-    webhookUrl: 'https://braynova.app.n8n.cloud/webhook/854c829c-2ce6-426f-89e2-ed44d33182f3/chat',
+    webhookUrl: 'https://braynova.app.n8n.cloud/webhook/51f64acb-d060-414c-9ee8-a649d93a7c08/chat',
     title: '💎 Chatbot Hera Luna',
     subtitle: 'Discutons de pierres naturelles ✨',
     description: 'Pose ta question ici.',
